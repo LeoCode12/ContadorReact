@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import logo from './logo.svg'
+import Boton from './Componentes/Button/Button'
+
+
 
 function App() {
+
+
+  const manejarClick = () =>{
+    console.log('click');
+  }
+
+  const reiniciarContador = () =>{
+    console.log('reiniciar');
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div className="contenedor-logo">
+       <img 
+       src={logo} 
+       alt=""
+       className="logo" />
+       <h1>Contador Click</h1>
+     </div>
+     <div className="contenedor-principal">
+      <Boton
+      texto="Click"
+      click={true}
+      manejarClick={manejarClick} />
+
+      <Boton
+      texto="Reiniciar"
+      click={false}
+      manejarClick={reiniciarContador} />
+     </div>
     </div>
   );
 }
